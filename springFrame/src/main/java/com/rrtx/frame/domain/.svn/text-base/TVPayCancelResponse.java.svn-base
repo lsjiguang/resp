@@ -1,0 +1,9 @@
+package com.zte.pay.domain;
+
+public class TVPayCancelResponse extends Response{ 
+	@Override
+	public String getMACSource() {
+		return "";
+	}
+ 
+}

@@ -1,0 +1,19 @@
+package com.zte.pay.service;
+
+import org.springframework.stereotype.Service;
+
+import com.zte.pay.domain.TVOnlinePayRequest;
+import com.zte.pay.domain.TVOnlinePayResponse;
+import com.zte.pay.exception.ZTEPayException;
+@Service
+public class TVOnlinePayService extends AbsractService{
+	
+public TVOnlinePayResponse tvOnlinePay(TVOnlinePayRequest tvonlinePayRequest) throws ZTEPayException{
+		
+		Parameters paramerters = new Parameters(tvonlinePayRequest ,new TVOnlinePayResponse());
+		
+		CallProcedure(paramerters,"TVOnlinePay.tvOnlinePay"); 
+		
+		return (TVOnlinePayResponse)paramerters.getResponse();
+	}
+}

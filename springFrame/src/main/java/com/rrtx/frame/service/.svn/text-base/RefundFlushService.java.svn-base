@@ -1,0 +1,22 @@
+package com.zte.pay.service;
+ 
+ 
+import org.springframework.stereotype.Service;
+ 
+import com.zte.pay.domain.RefundFlushRequest;
+import com.zte.pay.domain.RefundFlushResponse;
+import com.zte.pay.exception.ZTEPayException;
+
+@Service
+public class RefundFlushService  extends AbsractService{
+	
+	public RefundFlushResponse RefundFlush(RefundFlushRequest RefundFlushRequest) throws ZTEPayException{ 
+		
+		Parameters paramerters = new Parameters(RefundFlushRequest ,new RefundFlushResponse());
+		
+		CallProcedure(paramerters,"RefundFlush.refundFlush"); 
+		
+		return (RefundFlushResponse)paramerters.getResponse();
+	}
+	
+}

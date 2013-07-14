@@ -1,0 +1,22 @@
+package com.zte.pay.service;
+ 
+ 
+import org.springframework.stereotype.Service;
+ 
+import com.zte.pay.domain.OnlinePayRequest;
+import com.zte.pay.domain.OnlinePayResponse;
+import com.zte.pay.exception.ZTEPayException;
+
+@Service
+public class OnlinePayService  extends AbsractService{
+	
+	public OnlinePayResponse onlinePay(OnlinePayRequest onlinePayRequest) throws ZTEPayException{
+		
+		Parameters paramerters = new Parameters(onlinePayRequest ,new OnlinePayResponse());
+		
+		CallProcedure(paramerters,"OnlinePay.onlinePay"); 
+		
+		return (OnlinePayResponse)paramerters.getResponse();
+	}
+	
+}

@@ -1,0 +1,36 @@
+package com.zte.pay.domain;
+
+import javax.validation.constraints.NotNull;
+
+public class CardInfoSyncRequest extends Request{
+	
+	@NotNull
+	private String customerNo;
+	@NotNull
+	private String tokenId;
+	@NotNull
+	private String tokenStatus;
+	
+	public String getCustomerNo() {
+		return customerNo;
+	}
+	public void setCustomerNo(String customerNo) {
+		this.customerNo = customerNo;
+	}
+	public String getTokenId() {
+		return tokenId;
+	}
+	public void setTokenId(String tokenId) {
+		this.tokenId = tokenId;
+	}
+	public String getTokenStatus() {
+		return tokenStatus;
+	}
+	public void setTokenStatus(String tokenStatus) {
+		this.tokenStatus = tokenStatus;
+	}
+	@Override
+	public String getMACSource() {
+		return customerNo+tokenId+tokenStatus;
+	}
+}

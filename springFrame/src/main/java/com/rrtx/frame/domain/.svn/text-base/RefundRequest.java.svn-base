@@ -1,0 +1,60 @@
+package com.zte.pay.domain;
+
+import javax.validation.constraints.NotNull;
+
+public class RefundRequest extends Request{
+	 
+	@NotNull
+	private String orderNo;
+	@NotNull
+	private String merchantId;
+	@NotNull
+	private String tokenId;
+	@NotNull
+	private String amount;
+	@NotNull
+	private String currency;
+	@NotNull
+	private String orderTime;
+	@Override
+	public String getMACSource() {
+		return orderNo+merchantId+tokenId+amount+currency+orderTime;
+	}
+	public String getOrderNo() {
+		return orderNo;
+	}
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
+	public String getMerchantId() {
+		return merchantId;
+	}
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+	}
+	public String getTokenId() {
+		return tokenId;
+	}
+	public void setTokenId(String tokenId) {
+		this.tokenId = tokenId;
+	}
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+	public String getCurrency() {
+		return currency;
+	}
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	public String getOrderTime() {
+		return orderTime;
+	}
+	public void setOrderTime(String orderTime) {
+		this.orderTime = orderTime;
+	} 
+	
+}

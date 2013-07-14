@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn_repository/!svn/ver/16577/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service
+END
+AbsractService.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn_repository/!svn/ver/15579/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/AbsractService.java
+END
+CardInfoSyncService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn_repository/!svn/ver/15488/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/CardInfoSyncService.java
+END
+Parameters.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn_repository/!svn/ver/15579/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/Parameters.java
+END
+RefundService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn_repository/!svn/ver/15579/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/RefundService.java
+END
+RefundFlushService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn_repository/!svn/ver/15579/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/RefundFlushService.java
+END
+LoadPayService.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn_repository/!svn/ver/15579/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/LoadPayService.java
+END
+CommService.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn_repository/!svn/ver/16577/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/CommService.java
+END
+LoadPayFlushService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn_repository/!svn/ver/15579/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/LoadPayFlushService.java
+END
+OnlinePayService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn_repository/!svn/ver/15579/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/OnlinePayService.java
+END
+OffLineBatchPayService.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn_repository/!svn/ver/15647/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/OffLineBatchPayService.java
+END
+OnlinePayFlushService.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn_repository/!svn/ver/15579/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/OnlinePayFlushService.java
+END
+TVOlinePayCancelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn_repository/!svn/ver/16577/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/TVOlinePayCancelService.java
+END
+TVPayService.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn_repository/!svn/ver/15806/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/TVPayService.java
+END
+InitService.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn_repository/!svn/ver/15931/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/InitService.java
+END
+TVOnlinePayService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn_repository/!svn/ver/16577/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/TVOnlinePayService.java
+END
+TVPayCancelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn_repository/!svn/ver/15806/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/TVPayCancelService.java
+END
+QueryBalanceService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn_repository/!svn/ver/16320/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/service/QueryBalanceService.java
+END

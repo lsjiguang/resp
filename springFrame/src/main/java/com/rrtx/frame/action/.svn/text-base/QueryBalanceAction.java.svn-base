@@ -1,0 +1,65 @@
+package com.zte.pay.action;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+
+import com.zte.pay.domain.QueryBalanceRequest;
+import com.zte.pay.domain.QueryBalanceResponse;
+import com.zte.pay.domain.Request;
+import com.zte.pay.domain.Response;
+import com.zte.pay.exception.ZTEPayException;
+import com.zte.pay.service.CommService;
+import com.zte.pay.service.QueryBalanceService;
+import com.zte.pay.util.Crypt;
+
+/**
+ * @ClassName: QueryBalanceAction 
+ * @Description: 查询联机账户余额的交易，对应交易码1004
+ * @author qijia
+ * @date 2013-5-13 下午3:19:37
+ * @version	1.0
+ */
+@Controller
+public class QueryBalanceAction extends AbstractAction<QueryBalanceRequest, QueryBalanceResponse> {
+	@Resource
+	private CommService commService;
+	@Resource
+	private QueryBalanceService queryBalanceService;
+	@Override
+	public Response execute(Request request) {
+		 QueryBalanceResponse response=new QueryBalanceResponse();
+		 String ztePWD=Crypt.Decrypt(((QueryBalanceRequest)request).getQueryPassword());
+		boolean customerExist = false;
+		try {
+			customerExist=commService.checkCustomerExistByToken(((QueryBalanceRequest) request).getTokenId());
+			if(customerExist){ 
+				String custID = commService.getCustomerNoByNFPToken(((QueryBalanceRequest)request).getTokenId()); 
+				//用SHA1加密 custID+ztePWD
+				((QueryBalanceRequest)request).setQueryPassword(Crypt.SHA1Crypt(custID+ztePWD));
+				
+				if(queryBalanceService.checkQueryPassword((QueryBalanceRequest) request)){ 
+					response=queryBalanceService.queryBalance((QueryBalanceRequest)request); 
+					response.getResponseHeader().success="true";
+				}
+			}
+		} catch (ZTEPayException e) {
+			TellException2Client(e, response);
+		}
+		
+		return response;
+	}
+	public CommService getCommService() {
+		return commService;
+	}
+	public void setCommService(CommService commService) {
+		this.commService = commService;
+	}
+	public QueryBalanceService getQueryBalanceService() {
+		return queryBalanceService;
+	}
+	public void setQueryBalanceService(QueryBalanceService queryBalanceService) {
+		this.queryBalanceService = queryBalanceService;
+	}
+
+}

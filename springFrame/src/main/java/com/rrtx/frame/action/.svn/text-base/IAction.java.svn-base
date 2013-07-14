@@ -1,0 +1,8 @@
+package com.zte.pay.action;
+
+import com.zte.pay.domain.Request;
+import com.zte.pay.domain.Response;
+
+public interface IAction {
+	public Response execute(Request request);
+}

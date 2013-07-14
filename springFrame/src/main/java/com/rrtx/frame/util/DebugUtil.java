@@ -1,0 +1,34 @@
+package com.rrtx.frame.util;
+
+import java.lang.reflect.Field;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.BeanWrapperImpl;
+
+import com.rrtx.frame.ws.CommData;
+
+public class DebugUtil { 
+	/**  
+	 * @Description: 将请求数据或返回数据输出到日志中
+	*/ 
+	public static void printInfo(Object commData,Class clz){
+		 Logger logger = Logger.getLogger(clz); 
+		 BeanWrapperImpl wrapper = new BeanWrapperImpl(commData);
+		 Field[] fields=commData.getClass().getDeclaredFields();
+		 for(Field field:fields){
+			 if(field.getName().startsWith("_")||field.getName().equals("typeDesc")||wrapper.getPropertyValue(field.getName())==null){
+				 continue;
+			 }
+			 if(CommData[].class.isAssignableFrom(field.getType())){
+				 CommData[] list=(CommData[])wrapper.getPropertyValue(field.getName());
+				 for(int i=0;i<list.length;i++){
+					 logger.debug("list["+i+"] value is: ");
+					 printInfo(list[i],clz);
+				 } 
+			 } else if(wrapper.getPropertyValue(field.getName())!=null&&!wrapper.getPropertyValue(field.getName()).toString().equals("null") ){
+				 logger.debug(field.getName()+" = "+ wrapper.getPropertyValue(field.getName()));
+			 }
+		 }
+	}
+	
+}

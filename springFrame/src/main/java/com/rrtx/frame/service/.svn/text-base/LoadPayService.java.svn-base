@@ -1,0 +1,22 @@
+package com.zte.pay.service;
+
+ 
+import org.springframework.stereotype.Service;
+ 
+import com.zte.pay.domain.LoadPayRequest;
+import com.zte.pay.domain.LoadPayResponse;
+import com.zte.pay.exception.ZTEPayException;
+
+@Service
+public class LoadPayService  extends AbsractService{
+	
+	public LoadPayResponse LoadPay(LoadPayRequest loadPayRequest) throws ZTEPayException{
+		
+		Parameters paramerters = new Parameters(loadPayRequest ,new LoadPayResponse());
+		
+		CallProcedure(paramerters,"LoadPay.loadPay"); 
+		
+		return (LoadPayResponse)paramerters.getResponse();
+	}
+	
+}

@@ -1,0 +1,33 @@
+package com.zte.pay.domain;
+
+
+public class QueryBalanceResponse extends Response{
+	 
+	private String tokenId; 
+	private String currency; 
+	private String balance; 
+	
+	@Override
+	public String getMACSource() {
+		return tokenId+currency+balance;
+	}
+	public String getTokenId() {
+		return tokenId;
+	}
+	public void setTokenId(String tokenId) {
+		this.tokenId = tokenId;
+	}
+	public String getCurrency() {
+		return currency;
+	}
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	public String getBalance() {
+		return balance;
+	}
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
+	
+}

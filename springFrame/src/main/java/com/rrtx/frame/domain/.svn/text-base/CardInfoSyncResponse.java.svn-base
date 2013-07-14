@@ -1,0 +1,10 @@
+package com.zte.pay.domain;
+
+public class CardInfoSyncResponse extends Response{
+
+	@Override
+	public String getMACSource() {
+		return "";
+	}
+	
+}

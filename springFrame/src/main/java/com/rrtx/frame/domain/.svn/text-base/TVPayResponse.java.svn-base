@@ -1,0 +1,10 @@
+package com.zte.pay.domain;
+
+public class TVPayResponse extends Response{
+
+	@Override
+	public String getMACSource() {
+		return "";
+	}
+	
+}

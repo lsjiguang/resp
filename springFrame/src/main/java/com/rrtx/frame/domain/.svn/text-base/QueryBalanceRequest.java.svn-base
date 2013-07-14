@@ -1,0 +1,36 @@
+package com.zte.pay.domain;
+
+import javax.validation.constraints.NotNull;
+
+public class QueryBalanceRequest extends Request{
+	
+	@NotNull
+	private String tokenId;
+	@NotNull
+	private String currency;
+	@NotNull
+	private String queryPassword; 
+	@Override
+	public String getMACSource() {
+		return tokenId+currency+queryPassword;
+	}
+	public String getTokenId() {
+		return tokenId;
+	}
+	public void setTokenId(String tokenId) {
+		this.tokenId = tokenId;
+	}
+	public String getCurrency() {
+		return currency;
+	}
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	public String getQueryPassword() {
+		return queryPassword;
+	}
+	public void setQueryPassword(String queryPassword) {
+		this.queryPassword = queryPassword;
+	}
+	
+}

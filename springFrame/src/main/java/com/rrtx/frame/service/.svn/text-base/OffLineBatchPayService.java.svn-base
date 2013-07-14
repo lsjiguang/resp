@@ -1,0 +1,22 @@
+package com.zte.pay.service;
+ 
+ 
+import org.springframework.stereotype.Service;
+ 
+import com.zte.pay.domain.OffLineBatchPayRequest;
+import com.zte.pay.domain.OffLineBatchPayResponse;
+import com.zte.pay.exception.ZTEPayException;
+
+@Service
+public class OffLineBatchPayService  extends AbsractService{
+	
+	public OffLineBatchPayResponse OffLineBatchPay(OffLineBatchPayRequest offLineBatchPayRequest) throws ZTEPayException{
+		
+		Parameters paramerters = new Parameters(offLineBatchPayRequest ,new OffLineBatchPayResponse());
+		
+		CallProcedure(paramerters,"OffLineBatchPay.offLineBatchPay"); 
+		
+		return (OffLineBatchPayResponse)paramerters.getResponse();
+	}
+	
+}

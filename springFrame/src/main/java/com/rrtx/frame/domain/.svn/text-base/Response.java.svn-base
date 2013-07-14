@@ -1,0 +1,14 @@
+package com.zte.pay.domain;
+
+public abstract class Response {
+	public ResponseHeader responseHeader = new ResponseHeader();
+ 
+	public ResponseHeader getResponseHeader() {
+		return responseHeader;
+	}
+
+	public void setResponseHeader(ResponseHeader responseHeader) {
+		this.responseHeader = responseHeader;
+	}
+	public abstract String getMACSource();
+}

@@ -1,0 +1,88 @@
+package com.zte.pay.domain;
+
+public class OnlinePayFlushResponse extends Response{
+
+	private String orderSerialNo;
+	private String orderNo;
+	private String merchantId;
+	private String tokenId;
+	private String amount;
+	private String succTime;
+	private String balance;
+
+	
+	@Override
+	public String getMACSource() {
+		return orderSerialNo+orderNo+merchantId+tokenId+amount+succTime+balance;
+	}
+
+	public String getOrderSerialNo() {
+		return orderSerialNo;
+	}
+
+
+	public void setOrderSerialNo(String orderSerialNo) {
+		this.orderSerialNo = orderSerialNo;
+	}
+
+
+	public String getOrderNo() {
+		return orderNo;
+	}
+
+
+	public void setOrderNo(String orderNo) {
+		this.orderNo = orderNo;
+	}
+
+
+	public String getMerchantId() {
+		return merchantId;
+	}
+
+
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+	}
+
+
+	public String getTokenId() {
+		return tokenId;
+	}
+
+
+	public void setTokenId(String tokenId) {
+		this.tokenId = tokenId;
+	}
+
+
+	public String getAmount() {
+		return amount;
+	}
+
+
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
+
+
+	public String getSuccTime() {
+		return succTime;
+	}
+
+
+	public void setSuccTime(String succTime) {
+		this.succTime = succTime;
+	}
+
+
+	public String getBalance() {
+		return balance;
+	}
+
+
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
+	
+}

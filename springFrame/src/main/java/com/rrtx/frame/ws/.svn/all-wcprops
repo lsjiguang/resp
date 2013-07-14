@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn_repository/!svn/ver/15896/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/ws
+END
+ZTEPayServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn_repository/!svn/ver/15931/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/ws/ZTEPayServiceImpl.java
+END
+CommData.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn_repository/!svn/ver/15633/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/ws/CommData.java
+END
+IZTEPayService.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn_repository/!svn/ver/15300/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/ws/IZTEPayService.java
+END

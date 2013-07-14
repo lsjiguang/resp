@@ -1,0 +1,82 @@
+package com.zte.pay.domain;
+
+import java.util.List;
+
+import javax.validation.constraints.NotNull;
+
+
+public class OffLineBatchPayRequest extends Request{
+	 
+	@NotNull
+	private String batchNo;
+	@NotNull
+	private String merchantId;
+	@NotNull
+	private String batchDate;
+	@NotNull
+	private String totalNum;
+	
+	private List<OffLineBatchPayOrder> orderList;
+	
+	
+	@Override
+	public String getMACSource() {
+		String temp ="";
+		for (OffLineBatchPayOrder res : orderList) {
+			String temp1=res.getOrderNo()+res.getTokenId()+res.getAmount()+res.getCurrency()+res.getOrderTime();
+			temp+=temp1;
+		}
+		return batchNo+merchantId+batchDate+totalNum+temp;
+	}
+
+
+	public String getBatchNo() {
+		return batchNo;
+	}
+
+
+	public void setBatchNo(String batchNo) {
+		this.batchNo = batchNo;
+	}
+
+
+	public String getMerchantId() {
+		return merchantId;
+	}
+
+
+	public void setMerchantId(String merchantId) {
+		this.merchantId = merchantId;
+	}
+
+
+	public String getBatchDate() {
+		return batchDate;
+	}
+
+
+	public void setBatchDate(String batchDate) {
+		this.batchDate = batchDate;
+	}
+
+
+	public String getTotalNum() {
+		return totalNum;
+	}
+
+
+	public void setTotalNum(String totalNum) {
+		this.totalNum = totalNum;
+	}
+
+
+	public List<OffLineBatchPayOrder> getOrderList() {
+		return orderList;
+	}
+
+
+	public void setOrderList(List<OffLineBatchPayOrder> orderList) {
+		this.orderList = orderList;
+	}
+	
+}

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn_repository/!svn/ver/15979/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/exception
+END
+ServerException.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn_repository/!svn/ver/15342/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/exception/ServerException.java
+END
+TransException.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn_repository/!svn/ver/15342/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/exception/TransException.java
+END
+ZTEPayException.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn_repository/!svn/ver/15979/ZTEPay/trunk/ZTEPayGateWay/JavaSource/com/zte/pay/exception/ZTEPayException.java
+END

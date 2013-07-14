@@ -1,0 +1,52 @@
+package com.zte.pay.service;
+
+import java.sql.SQLException;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
+
+import com.zte.pay.constants.Constants;
+import com.zte.pay.domain.QueryBalanceRequest;
+import com.zte.pay.domain.QueryBalanceResponse;
+import com.zte.pay.exception.TransException;
+import com.zte.pay.exception.ZTEPayException;
+
+@Service
+public class QueryBalanceService  extends AbsractService{
+	
+	private static final Logger logger = Logger.getLogger(QueryBalanceService.class);
+	/**  
+	 * @Description: 检查用户密码是否正确
+	*/ 
+	public boolean checkQueryPassword(QueryBalanceRequest queryBalanceRequest) throws ZTEPayException{
+		int rowCount=0;
+		try {
+			rowCount = ((Integer) (getSqlMapClientTemplate().queryForObject("QueryBalance.checkPassword", queryBalanceRequest))).intValue();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.warn(e.getMessage());
+			throw Constants.SERVER_ERROR_EXCEPTION; //服务异常
+		}
+		
+		if(rowCount==0)
+			throw new TransException("NFPQBL02"); //查询密码不正确
+		
+		return true;
+	} 
+	
+	/**  
+	 * @Description: 查询余额
+	*/ 
+	public QueryBalanceResponse queryBalance(QueryBalanceRequest queryBalanceRequest)throws ZTEPayException{
+		QueryBalanceResponse response;
+		try {
+			response = (QueryBalanceResponse)getSqlMapClientTemplate().queryForObject("QueryBalance.queryBalance", queryBalanceRequest);
+		} catch (Exception e) {
+			e.printStackTrace();
+			logger.warn(e.getMessage());
+			throw Constants.SERVER_ERROR_EXCEPTION; //服务异常
+		}
+		return response;
+	}
+	
+}

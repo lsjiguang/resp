@@ -1,0 +1,41 @@
+package com.zte.pay.action;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+
+import com.zte.pay.domain.RefundFlushRequest;
+import com.zte.pay.domain.RefundFlushResponse;
+import com.zte.pay.domain.Request;
+import com.zte.pay.domain.Response;
+import com.zte.pay.exception.ZTEPayException;
+import com.zte.pay.service.RefundFlushService;
+ 
+
+/**
+ * @ClassName: RefundFlushAction 
+ * @Description: 联机退款冲正交易，对应交易码为 1006
+ * @author qijia
+ * @date 2013-5-15 下午5:23:04
+ * @version	1.0
+ */
+@Controller
+public class RefundFlushAction extends AbstractAction<RefundFlushRequest, RefundFlushResponse> {
+
+	@Resource
+	RefundFlushService RefundFlushService;
+	
+	@Override
+	public Response execute(Request request) {
+		RefundFlushResponse response=new RefundFlushResponse();
+		try {
+			response = RefundFlushService.RefundFlush((RefundFlushRequest)request);
+			response.getResponseHeader().success="true";
+		} catch (ZTEPayException e) {
+			TellException2Client(e, response);
+		}
+		return response;
+	}
+
+
+}
